@@ -1,6 +1,6 @@
-# Model Proposal for _[Project Name]_
+# Model Proposal for _[Resilience of US Interlock Network]_
 
-_Your Name_
+_Hyuck David Chung_
 
 * Course ID: CMPLXSYS 530,
 * Course Title: Computer Modeling of Complex Systems
