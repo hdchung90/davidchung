@@ -10,13 +10,16 @@ _Hyuck David Chung_
 ### Goal 
 *****
 Through the proposed model, I hope to understand:
-1) the network properties of the interlock network (e.g., the largest cluster size(%), average clustering coefficient, path length, node degree) 2) the resilience of the interlock network (i.e., how much edges should be removed for the giant cluster to be collapsed), and _(if possible)_ 3) the structural changes before / after the financial crisis in the early 2000s.
+1) the network properties of the interlock network (e.g., the largest cluster size(%), average clustering coefficient, path length, node degree)
+2) the resilience of the interlock network (i.e., how much edges should be removed for the giant cluster to be collapsed)
+3) _(if possible)_  the structural changes before / after the financial crisis in the early 2000s.
 
 &nbsp;  
 ### Justification
 ****
 Previous literature on the US interlock network discuss how corporate practices such as the golden parachute diffuse within the network and less attention was paid to the overall structural attributes of the network. However, complex network studies have revealed that the overall network structure has a crucial impact on diffusion among network components. That is, depending on the network type (e.g., the small world network, caveman network, or scale-free network), the average diffusion speed changes dramatically.
-Thus, causal inferences through empirical analyses is not sufficient; I believe an ABM approach is required to fully analyze the structure properties of the interlock network. The interlock network can be understood as a complex system, composed of thousands of nodes (corporations) and edges (directors). An ABM approach will help us understand the structural properties of the interlock network.
+
+Thus, I believe causal inferences through empirical analyses is not sufficient and an ABM approach is required to fully analyze the structure properties of the interlock network. The interlock network can be understood as a complex system, composed of thousands of nodes (corporations) and edges (directors). An ABM approach will help us understand the structural properties of the interlock network.
 
 &nbsp; 
 ### Main Micro-level Processes and Macro-level Dynamics of Interest
@@ -52,7 +55,8 @@ The agents in the model is edges (directors) that connect nodes and form the int
 
 ```python
 int directorNum;  // the number of directors
-int directorMatch[directorNum][3] // each columns for director ID, female director, ethinicity
+int directorList[directorNum][3] // each columns for director ID, female director, ethinicity
+int directorMatch[directorNum][2]  // matching the gvkey number to an ordered sequence
 
 int DataNum;   // dyads that connect firms
 // data to be included: 1) f_gvkey, 2) t_gvkey, 3) dirID, 4) dirFem, 5) ethinicity
@@ -63,35 +67,41 @@ int bdexInfo[dataNum][dataType];
 &nbsp; 
 ### 3) Action and Interaction 
  
-**_Interaction Topology_**
-
-_Description of the topology of who interacts with whom in the system. Perfectly mixed? Spatial proximity? Along a network? CA neighborhood?_
- 
 **_Action Sequence_**
 
-_What does an agent, cell, etc. do on a given turn? Provide a step-by-step description of what happens on a given turn for each part of your model_
-
-1. Step 1
-2. Step 2
-3. Etc...
+1. Randomly select a edge from the directorList[directorNum][1].
+2. Remove the edge from the adjacencyMatrix[directorNum][directorNum].
+3. Check the largest cluster size when 5%, 10%, 15%, ... , 100% of edges are removed from the network.
+  3-1. search the giant cluster
+  3-2. calcualte the size of the giant cluster
+  3-3. record the cluster size at the given period.
 
 &nbsp; 
 ### 4) Model Parameters and Initialization
 
-_Describe and list any global parameters you will be applying in your model._
+1. Initialize the network setting
+1-1. Construct a network that has nodes with _firmNum_.
+1-2. Construct an array to record removed directors.
+1-3. Construct an array to record the largest cluster size.
 
-_Describe how your model will be initialized_
+2. Import US interlock data
+2-1. Fill in _bdexInfo_.
+2-2. Fill in _directorMatch_.
 
-_Provide a high level, step-by-step description of your schedule during each "tick" of the model_
+3. Build the network
+3-1. connect nodes using _bdexInfo_.
 
 &nbsp; 
-
 ### 5) Assessment and Outcome Measures
+The outcome measure is the size of the largest cluster size in the network.
 
-_What quantitative metrics and/or qualitative features will you use to assess your model outcomes?_
+1. Record the largest cluster size for every 5% of random edges removed
+2. Record the largest cluster size for every 5% of edges with female attributes removed
+3. Analyze if both removals exhibit a sudden collapse in the size.
 
 &nbsp; 
-
 ### 6) Parameter Sweep
-
-_What parameters are you most interested in sweeping through? What value ranges do you expect to look at for your analysis?_
+The parameter that I would be changing are the number of edges removed from the network.
+Ideally, it is best to test for every edge to be removed from the network.
+However it might not be possible due to the data size constraints.
+According to the complex network literature, many social networks exhibit collapsing behaviors before 30% of the nodes (or edges) are removed. 
