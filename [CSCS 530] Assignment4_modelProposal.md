@@ -1,4 +1,4 @@
-# Model Proposal for _[Resilience of US Interlock Network]_
+# Model Proposal for _[Resilience of the US Interlock Network]_
 
 _Hyuck David Chung_
 
@@ -6,19 +6,16 @@ _Hyuck David Chung_
 * Course Title: Computer Modeling of Complex Systems
 * Term: Winter, 2019
 
-
-
 &nbsp; 
-
 ### Goal 
 *****
- 
-_Provide a short, 1-3 sentence description of the goal of your model_
+Through the proposed model, I hope to understand 1) the network properties of the interlock network (e.g., the largest cluster size(%), average clustering coefficient, path length, node degree) 2) the resilience of the interlock network (i.e., how much edges should be removed for the giant cluster to be collapsed), and (if possible) 3) the structural changes before / after the financial crisis in the early 2000s.
 
 &nbsp;  
 ### Justification
 ****
-_Short explanation on why you are using ABM_
+Previous literature on the US interlock network discuss how corporate practices such as the golden parachute diffuse within the network and less attention was paid to the overall structural attributes of the network. However, complex network studies have revealed that the overall network structure has a crucial impact on diffusion among network components. That is, depending on the network type (e.g., the small world network, caveman network, or scale-free network), the average diffusion speed changes dramatically.
+Thus, I believe an ABM approach is required to fully analyze the interlock network. The interlock network can be understood as a complex system, composed of thousands of nodes (corporations) and edges (directors). An ABM approach will help us understand the structural properties of the interlock network.
 
 &nbsp; 
 ### Main Micro-level Processes and Macro-level Dynamics of Interest
