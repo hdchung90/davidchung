@@ -17,7 +17,7 @@ Through the proposed model, I hope to understand:
 &nbsp;  
 ### Justification
 ****
-Previous literature on the US interlock network discuss how corporate practices such as the golden parachute diffuse within the network and less attention was paid to the overall structural attributes of the network. However, complex network studies have revealed that the overall network structure has a crucial impact on diffusion among network components. That is, depending on the network type (e.g., the small world network, caveman network, or scale-free network), the average diffusion speed changes dramatically.
+Previous literature on the US interlock network discuss how corporate practices, such as the golden parachute, diffuse within the network and less attention was paid to the overall structural attributes of the network. However, complex network studies have revealed that the overall network structure has a crucial impact on diffusion among network components. That is, depending on the network type (e.g., the small world network, caveman network, or scale-free network), the average diffusion speed changes dramatically.
 
 Thus, I believe causal inferences through empirical analyses is not sufficient and an ABM approach is required to fully analyze the structure properties of the interlock network. The interlock network can be understood as a complex system, composed of thousands of nodes (corporations) and edges (directors). An ABM approach will help us understand the structural properties of the interlock network.
 
