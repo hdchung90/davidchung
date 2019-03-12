@@ -11,7 +11,7 @@ _Hyuck David Chung_
 *****
 Through the proposed model, I hope to understand:
 1) the network properties of the interlock network (e.g., the largest cluster size(%), average clustering coefficient, path length, node degree)
-2) the resilience of the interlock network (i.e., how much edges should be removed for the giant cluster to be collapsed)
+2) the resilience of the interlock network (i.e., how much edges should be removed for the giant cluster to collapse)
 3) _(if possible)_  the structural changes before / after the financial crisis in the early 2000s.
 
 &nbsp;  
