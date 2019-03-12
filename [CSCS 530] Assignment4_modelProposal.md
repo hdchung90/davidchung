@@ -73,7 +73,7 @@ int bdexInfo[dataNum][dataType];
 2. Remove the edge from the adjacencyMatrix[directorNum][directorNum].
 3. Check the largest cluster size when 5%, 10%, 15%, ... , 100% of edges are removed from the network.
 
-3-(1) search the giant cluster
+\vspace{5mm} 3-(1) search the giant cluster
 
 3-(2) calcualte the size of the giant cluster
 
