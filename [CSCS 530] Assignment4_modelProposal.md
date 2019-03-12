@@ -104,4 +104,4 @@ The outcome measure is the size of the largest cluster size in the network.
 The parameter that I would be changing are the number of edges removed from the network.
 Ideally, it is best to test for every edge to be removed from the network.
 However it might not be possible due to the data size constraints.
-According to the complex network literature, many social networks exhibit collapsing behaviors before 30% of the nodes (or edges) are removed. 
+According to the complex network literature, many social networks exhibit collapsing behaviors before 30% of the nodes (or edges) are removed. Following the literature, I will first remove at most 30% of the total edges and observe the outcomes.
