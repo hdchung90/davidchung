@@ -71,27 +71,27 @@ int bdexInfo[dataNum][dataType];
 
 1. Randomly select a edge from the directorList[directorNum][1].
 2. Remove the edge from the adjacencyMatrix[directorNum][directorNum].
-3. Check the largest cluster size when 5%, 10%, 15%, ... , 100% of edges are removed from the network.
--3-(1) search the giant cluster.
--3-(2) calcualte the size of the giant cluster.
--3-(3) record the cluster size at the given period.
+3. Check the largest cluster size when 5%, 10%, 15%, ... , 100% of edges are removed from the network<br>
+3-(1) search the giant cluster<br>
+3-(2) calcualte the size of the giant cluster<br>
+3-(3) record the cluster size at the given period<br>
 
 &nbsp; 
 ### 4) Model Parameters and Initialization
 
-1. Initialize the network setting. <br>
- 1-(1) construct a network that has nodes with _firmNum_.<br>
- 1-(2) construct an array to record removed directors.<br>
- 1-(3) construct an array to record the largest cluster size.<br>
+1. Initialize the network setting<br>
+ 1-(1) construct a network that has nodes with _firmNum_<br>
+ 1-(2) construct an array to record removed directors<br>
+ 1-(3) construct an array to record the largest cluster size<br>
 
 
-2. Import US interlock data.<br>
- 2-(1) fill in _bdexInfo_.<br>
- 2-(2) fill in _directorMatch_.<br>
+2. Import US interlock data<br>
+ 2-(1) fill in _bdexInfo_<br>
+ 2-(2) fill in _directorMatch_<br>
 
 
-3. Build the network.<br>
- 3-(1) connect nodes using _bdexInfo_.<br>
+3. Build the network<br>
+ 3-(1) connect nodes using _bdexInfo_<br>
 
 &nbsp; 
 ### 5) Assessment and Outcome Measures
@@ -99,7 +99,7 @@ The outcome measure is the size of the largest cluster size in the network.
 
 1. Record the largest cluster size for every 5% of random edges removed
 2. Record the largest cluster size for every 5% of edges with female attributes removed
-3. Analyze if both removals exhibit a sudden collapse in the size.
+3. Analyze if both removals exhibit a sudden collapse in the size
 
 &nbsp; 
 ### 6) Parameter Sweep
