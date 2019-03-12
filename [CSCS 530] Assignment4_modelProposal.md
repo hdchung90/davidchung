@@ -72,34 +72,25 @@ int bdexInfo[dataNum][dataType];
 1. Randomly select a edge from the directorList[directorNum][1].
 2. Remove the edge from the adjacencyMatrix[directorNum][directorNum].
 3. Check the largest cluster size when 5%, 10%, 15%, ... , 100% of edges are removed from the network.
-
-\vspace{5mm} 3-(1) search the giant cluster
-
-3-(2) calcualte the size of the giant cluster
-
+3-(1) search the giant cluster.
+3-(2) calcualte the size of the giant cluster.
 3-(3) record the cluster size at the given period.
 
 &nbsp; 
 ### 4) Model Parameters and Initialization
 
-1. Initialize the network setting
-
+1. Initialize the network setting.
 1-(1) construct a network that has nodes with _firmNum_.
-
 1-(2) construct an array to record removed directors.
-
 1-(3) construct an array to record the largest cluster size.
 
 
-2. Import US interlock data
-
+2. Import US interlock data.
 2-(1) fill in _bdexInfo_.
-
 2-(2) fill in _directorMatch_.
 
 
-3. Build the network
- 
+3. Build the network.
 3-(1) connect nodes using _bdexInfo_.
 
 &nbsp; 
