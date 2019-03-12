@@ -79,19 +79,19 @@ int bdexInfo[dataNum][dataType];
 &nbsp; 
 ### 4) Model Parameters and Initialization
 
-1. Initialize the network setting.
--1-(1) construct a network that has nodes with _firmNum_.
--1-(2) construct an array to record removed directors.
--1-(3) construct an array to record the largest cluster size.
+1. Initialize the network setting. <br>
+ 1-(1) construct a network that has nodes with _firmNum_.<br>
+ 1-(2) construct an array to record removed directors.<br>
+ 1-(3) construct an array to record the largest cluster size.<br>
 
 
-2. Import US interlock data.
--2-(1) fill in _bdexInfo_.
--2-(2) fill in _directorMatch_.
+2. Import US interlock data.<br>
+ 2-(1) fill in _bdexInfo_.<br>
+ 2-(2) fill in _directorMatch_.<br>
 
 
-3. Build the network.
--3-(1) connect nodes using _bdexInfo_.
+3. Build the network.<br>
+ 3-(1) connect nodes using _bdexInfo_.<br>
 
 &nbsp; 
 ### 5) Assessment and Outcome Measures
