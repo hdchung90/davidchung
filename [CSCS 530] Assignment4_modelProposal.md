@@ -9,61 +9,58 @@ _Hyuck David Chung_
 &nbsp; 
 ### Goal 
 *****
-Through the proposed model, I hope to understand 1) the network properties of the interlock network (e.g., the largest cluster size(%), average clustering coefficient, path length, node degree) 2) the resilience of the interlock network (i.e., how much edges should be removed for the giant cluster to be collapsed), and (if possible) 3) the structural changes before / after the financial crisis in the early 2000s.
+Through the proposed model, I hope to understand:
+1) the network properties of the interlock network (e.g., the largest cluster size(%), average clustering coefficient, path length, node degree) 2) the resilience of the interlock network (i.e., how much edges should be removed for the giant cluster to be collapsed), and _(if possible)_ 3) the structural changes before / after the financial crisis in the early 2000s.
 
 &nbsp;  
 ### Justification
 ****
 Previous literature on the US interlock network discuss how corporate practices such as the golden parachute diffuse within the network and less attention was paid to the overall structural attributes of the network. However, complex network studies have revealed that the overall network structure has a crucial impact on diffusion among network components. That is, depending on the network type (e.g., the small world network, caveman network, or scale-free network), the average diffusion speed changes dramatically.
-Thus, I believe an ABM approach is required to fully analyze the interlock network. The interlock network can be understood as a complex system, composed of thousands of nodes (corporations) and edges (directors). An ABM approach will help us understand the structural properties of the interlock network.
+Thus, causal inferences through empirical analyses is not sufficient; I believe an ABM approach is required to fully analyze the structure properties of the interlock network. The interlock network can be understood as a complex system, composed of thousands of nodes (corporations) and edges (directors). An ABM approach will help us understand the structural properties of the interlock network.
 
 &nbsp; 
 ### Main Micro-level Processes and Macro-level Dynamics of Interest
 ****
 
-_Short overview of the key processes and/or relationships you are interested in using your model to explore. Will likely be something regarding emergent behavior that arises from individual interactions_
+Albert, Jeong, & Barabasi (2000) has shown that different network structures exhibit different degree of network resilience. On the one hand, scale-free networks are resilient to random removals (or errors), but possess a great weakness in targeted removals (or attacks on hubs). On the other hand, random networks have a similar degree of resilience to both random and targeted removals.
+
+Following Albert, Jeong, & Barabasi (2000), I will apply the reverse percolation theory by removing edges (directors) from the network (interlock network) and study whether there is a sudden collapse in the largest cluster.
+
+# * Micro-level process:
+1. Randomly remove edges (directors) from the network.  
+2. Remove edges with specific attributes (female directors) first from the network.
+
+# * Macro-level dynamics:
+1. Observe the size change of the largest cluster when edges are randomly removed.
+2. Observe the size change of the largest cluster when edges with specific attributes are first removed.
 
 &nbsp; 
-
-
 ## Model Outline
 ****
 &nbsp; 
 ### 1) Environment
-_Description of the environment in your model. Things to specify *if they apply*:_
-
-* _Boundary conditions (e.g. wrapping, infinite, etc.)_
-* _Dimensionality (e.g. 1D, 2D, etc.)_
-* _List of environment-owned variables (e.g. resources, states, roughness)_
-* _List of environment-owned methods/procedures (e.g. resource production, state change, etc.)_
-
+The environment in the model is the interlock network where nodes (US corporations) are connected with edges (directors).
 
 ```python
-# Include first pass of the code you are thinking of using to construct your environment
-# This may be a set of "patches-own" variables and a command in the "setup" procedure, a list, an array, or Class constructor
-# Feel free to include any patch methods/procedures you have. Filling in with pseudocode is ok! 
-# NOTE: If using Netlogo, remove "python" from the markdown at the top of this section to get a generic code block
+int firmNum;   // the number of firms in the given year
+int adjacencyMatrix[firmNum][firmNum];   // the network structure where the value is equal to 1 if two nodes are connected, 0 if not.
 ```
 
 &nbsp; 
-
 ### 2) Agents
- 
- _Description of the "agents" in the system. Things to specify *if they apply*:_
- 
-* _List of agent-owned variables (e.g. age, heading, ID, etc.)_
-* _List of agent-owned methods/procedures (e.g. move, consume, reproduce, die, etc.)_
-
+The agents in the model is edges (directors) that connect nodes and form the interlock network.
 
 ```python
-# Include first pass of the code you are thinking of using to construct your agents
-# This may be a set of "turtle-own" variables and a command in the "setup" procedure, a list, an array, or Class constructor
-# Feel free to include any agent methods/procedures you have so far. Filling in with pseudocode is ok! 
-# NOTE: If using Netlogo, remove "python" from the markdown at the top of this section to get a generic code block
+int directorNum;  // the number of directors
+int directorMatch[directorNum][3] // each columns for director ID, female director, ethinicity
+
+int DataNum;   // dyads that connect firms
+// data to be included: 1) f_gvkey, 2) t_gvkey, 3) dirID, 4) dirFem, 5) ethinicity
+int dataType = 5; 
+int bdexInfo[dataNum][dataType];
 ```
 
 &nbsp; 
-
 ### 3) Action and Interaction 
  
 **_Interaction Topology_**
