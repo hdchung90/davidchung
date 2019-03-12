@@ -25,7 +25,7 @@ Thus, I believe causal inferences through empirical analyses is not sufficient a
 ### Main Micro-level Processes and Macro-level Dynamics of Interest
 ****
 
-Albert, Jeong, & Barabasi (2000) has shown that different network structures exhibit different degree of network resilience. On the one hand, scale-free networks are resilient to random removals (or errors), but possess a great weakness in targeted removals (or attacks on hubs). On the other hand, random networks have a similar degree of resilience to both random and targeted removals.
+Albert, Jeong, & Barabasi (2000) has shown that different network structures exhibit different degrees of network resilience. On the one hand, scale-free networks are resilient to random removals (or errors), but possess a great weakness in targeted removals (or attacks on hubs). On the other hand, random networks have a similar degree of resilience to both random and targeted removals.
 
 Following Albert, Jeong, & Barabasi (2000), I will apply the reverse percolation theory by removing edges (directors) from the network (interlock network) and study whether there is a sudden collapse in the largest cluster.
 
