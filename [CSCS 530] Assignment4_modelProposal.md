@@ -29,11 +29,11 @@ Albert, Jeong, & Barabasi (2000) has shown that different network structures exh
 
 Following Albert, Jeong, & Barabasi (2000), I will apply the reverse percolation theory by removing edges (directors) from the network (interlock network) and study whether there is a sudden collapse in the largest cluster.
 
-# * Micro-level process:
+### * Micro-level process:
 1. Randomly remove edges (directors) from the network.  
 2. Remove edges with specific attributes (female directors) first from the network.
 
-# * Macro-level dynamics:
+### * Macro-level dynamics:
 1. Observe the size change of the largest cluster when edges are randomly removed.
 2. Observe the size change of the largest cluster when edges with specific attributes are first removed.
 
