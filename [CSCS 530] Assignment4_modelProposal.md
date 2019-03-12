@@ -55,7 +55,7 @@ The agents in the model is edges (directors) that connect nodes and form the int
 
 ```python
 int directorNum;  // the number of directors
-int directorList[directorNum][3] // each columns for director ID, female director, ethinicity
+int directorList[directorNum][3] // each column for director ID, female director, ethinicity
 int directorMatch[directorNum][2]  // matching the gvkey number to an ordered sequence
 
 int DataNum;   // dyads that connect firms
@@ -72,23 +72,34 @@ int bdexInfo[dataNum][dataType];
 1. Randomly select a edge from the directorList[directorNum][1].
 2. Remove the edge from the adjacencyMatrix[directorNum][directorNum].
 3. Check the largest cluster size when 5%, 10%, 15%, ... , 100% of edges are removed from the network.
+
   3-1. search the giant cluster
+  
   3-2. calcualte the size of the giant cluster
+  
   3-3. record the cluster size at the given period.
 
 &nbsp; 
 ### 4) Model Parameters and Initialization
 
 1. Initialize the network setting
+
 1-1. Construct a network that has nodes with _firmNum_.
+
 1-2. Construct an array to record removed directors.
+
 1-3. Construct an array to record the largest cluster size.
 
+
 2. Import US interlock data
+
 2-1. Fill in _bdexInfo_.
+
 2-2. Fill in _directorMatch_.
 
+
 3. Build the network
+
 3-1. connect nodes using _bdexInfo_.
 
 &nbsp; 
