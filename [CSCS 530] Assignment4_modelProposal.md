@@ -1,4 +1,4 @@
-# Model Proposal for _[Resilience of the US Interlock Network]_
+# Model Proposal for _'Resilience of the US Interlock Network'_
 
 _Hyuck David Chung_
 
