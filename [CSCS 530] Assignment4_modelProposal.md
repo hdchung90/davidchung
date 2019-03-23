@@ -22,6 +22,9 @@ Previous literature on the US interlock network discuss how corporate practices,
 Thus, I believe causal inferences through empirical analyses is not sufficient and an ABM approach is required to fully analyze the structure properties of the interlock network. The interlock network can be understood as a complex system, composed of thousands of nodes (corporations) and edges (directors). An ABM approach will help us understand the structural properties of the interlock network.
 
 &nbsp; 
+
+*LS COMMENTS: Solid setup and overview. Well articulated justification.*
+
 ### Main Micro-level Processes and Macro-level Dynamics of Interest
 ****
 
@@ -38,6 +41,11 @@ Following Albert, Jeong, & Barabasi (2000), I will apply the reverse percolation
 2. Observe the size change of the largest cluster when edges with specific attributes are first removed.
 
 &nbsp; 
+
+*LS COMMENTS: Great baseline setup. This definitely leaves room to consider potentially more complicated and/or highly realistic networks in the future. One thing I was wondering here - will there be a pattern in where female edges occur? This will likely have a big impact on what you find. Also, you might consider making the removal of edges in the 2) process probabilistic instead of deterministic (i.e. make it so that edges with particular attribute have a higher probability of being removed rather than have them all removed first.*
+
+*Another point of clarification - are you thinking about clusters as disconnected components here? Or as "cliques"?*
+
 ## Model Outline
 ****
 &nbsp; 
@@ -65,6 +73,9 @@ int bdexInfo[dataNum][dataType];
 ```
 
 &nbsp; 
+
+*LS COMMENTS: Good.* 
+
 ### 3) Action and Interaction 
  
 **_Action Sequence_**
@@ -77,6 +88,9 @@ int bdexInfo[dataNum][dataType];
 3-(3) record the cluster size at the given period<br>
 
 &nbsp; 
+
+*LS COMMENTS: Good. I suggest looking into existing cluster size calculation algorithms for this if you haven't already.*
+
 ### 4) Model Parameters and Initialization
 
 1. Initialize the network setting<br>
@@ -94,16 +108,24 @@ int bdexInfo[dataNum][dataType];
  3-(1) connect nodes using _bdexInfo_<br>
 
 &nbsp; 
+
+*LS COMMENTS: Great to see you are plannning on getting to using real data for this. I would suggest doing an abstract version first to make sure everything is working as expected, and then incorporating the more realistic data.*
+
 ### 5) Assessment and Outcome Measures
 The outcome measure is the size of the largest cluster size in the network.
-
+8
 1. Record the largest cluster size for every 5% of random edges removed
 2. Record the largest cluster size for every 5% of edges with female attributes removed
 3. Analyze if both removals exhibit a sudden collapse in the size
 
 &nbsp; 
+
+*LS COMMENTS: Solid initial approach. Depending on the network size and density, it might also be interesting to see the number of disconnected components that are produced. Also, how are you defining "collapse" here?*
+
 ### 6) Parameter Sweep
 The parameter that I would be changing are the number of edges removed from the network.
 Ideally, it is best to test for every edge to be removed from the network.
 However it might not be possible due to the data size constraints.
 According to the complex network literature, many social networks exhibit collapsing behaviors before 30% of the nodes (or edges) are removed. Following the literature, I will first remove at most 30% of the total edges and observe the outcomes.
+
+*LS COMMENTS: Very well-thought out approach for a model that should prove very flexible for future elaborations. If you end up having enough time, you might also consider adding another level of complexity by simulating diffusion processes in the resulting networks. Another direction to consider would be looking at non-random removal wherein, for instance, the likelihood of an edge being removed depends on it being connected to a company that has had other edges dropped. Good start! 19/20*
